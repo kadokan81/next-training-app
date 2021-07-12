@@ -2,6 +2,7 @@ import AddressIcon from '../icons/address-icon';
 import ArrowRightIcon from '../icons/arrow-right-icon';
 import DateIcon from '../icons/date-icon';
 import Button from '../ui/button';
+import Image from 'next/image';
 
 import classes from './event-item.module.css';
 const EventItem = ({ event }) => {
@@ -18,11 +19,17 @@ const EventItem = ({ event }) => {
 	const formatLocation = location.replace(', ', '\n');
 	return (
 		<li className={classes.item}>
-			<img
+			<Image
+				src={`/${image}`}
+				alt={title}
+				width={440}
+				height={260}
+			/>
+			{/* <img
 				src={`/${image}`}
 				alt=''
 				className={classes.img}
-			/>
+			/> */}
 			<div className={classes.content}>
 				<div className={classes.summary}>
 					<h2>{title}</h2>

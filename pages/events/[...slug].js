@@ -1,6 +1,5 @@
 import { useRouter } from 'next/dist/client/router';
 import EventList from '../../components/events/event-list';
-import { getFilteredEvents } from '../../dummy-data';
 import ResultsTitle from '../../components/event-detail/results-title';
 import Button from '../../components/ui/button';
 import ErrorAlert from '../../components/ui/error-alert';

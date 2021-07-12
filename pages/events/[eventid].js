@@ -3,15 +3,21 @@ import EventContent from '../../components/event-detail/event-content';
 import EventLogistics from '../../components/event-detail/event-logistics';
 import EventSummary from '../../components/event-detail/event-summary';
 import { getEventById } from '../../dummy-data';
+import Head from 'next/head';
 
 const EventDetailPage = ({ event }) => {
-	// const route = useRouter();
-	// const currentEvent = getEventById(route.query.eventid);
 	if (!event) {
 		return <p>No event like this</p>;
 	}
 	return (
 		<>
+			<Head>
+				<title>{event.title}</title>
+				<meta
+					name={event.description}
+					content='Page with all events '
+				/>
+			</Head>
 			<EventSummary title={event.title} />
 			<EventLogistics
 				date={event.date}

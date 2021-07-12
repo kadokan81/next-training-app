@@ -1,12 +1,20 @@
 import EventList from '../components/events/event-list';
 import { getFeaturedEvents } from '../dummy-data';
+import Head from 'next/head';
 
 const HomePage = ({ curEvent }) => {
-	// console.log(curEvent);
-	// const featuredEvents = getFeaturedEvents();
-	// const featuredEvents = [];
-
-	return <EventList events={curEvent} />;
+	return (
+		<>
+			<Head>
+				<title>NextJS Events</title>
+				<meta
+					name='description'
+					content='Find a lot of great events that allow you to evolve... '
+				/>
+			</Head>
+			<EventList events={curEvent} />
+		</>
+	);
 };
 
 export const getStaticProps = async () => {
